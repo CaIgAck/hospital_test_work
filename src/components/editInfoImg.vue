@@ -34,15 +34,15 @@
       <p>Качество снимка</p>
 
       <v-radio-group class="mb-12" @change="set('fullVolume', $event)">
-        <v-radio label="Radio 1"></v-radio>
+        <v-radio label="Полный объем"></v-radio>
         <v-menu bottom offset-y>
           <template v-slot:activator="{ on }">
-            <v-radio label="Radio 2" v-on="on"></v-radio>
+            <v-radio label="Изменить " v-on="on"></v-radio>
           </template>
 
           <v-radio-group :value="edit" @change="set('edit', $event)">
-            <v-radio label="Radio 3"></v-radio>
-            <v-radio label="Radio 4"></v-radio>
+            <v-radio label="Неполный объем"></v-radio>
+            <v-radio label="Имеются артефакты"></v-radio>
           </v-radio-group>
         </v-menu>
       </v-radio-group>
