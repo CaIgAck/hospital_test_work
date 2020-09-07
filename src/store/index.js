@@ -33,6 +33,11 @@ export default new Vuex.Store({
   mutations: {
     editCategoriesInfo(state, { field, value }) {
       state.quality[field] = value;
+    },
+    clearField(state) {
+      state.quality.sliders = 100;
+      state.quality.edit = false;
+      state.quality.fullVolume = false;
     }
   },
   actions: {
@@ -49,7 +54,9 @@ export default new Vuex.Store({
             artifacts: edit.artifacts
           }
         })
-        .then(res => console.log(res))
+        .then(() => {
+          context.commit("clearField");
+        })
         .catch(err => console.log(err));
     }
   },
